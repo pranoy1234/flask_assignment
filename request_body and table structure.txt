@@ -1,0 +1,59 @@
+CREATE TABLE song (
+    id int(4)  NOT NULL UNIQUE,
+    name char(100) NOT NULL,
+    duration int(9) UNSIGNED NOT NULL,
+    upload_time datetime NOT NULL,
+   	PRIMARY KEY (id)
+);
+
+CREATE TABLE podcast (
+    id int(4)  NOT NULL UNIQUE,
+    name char(100) NOT NULL,
+    duration int(9) UNSIGNED NOT NULL,
+    host char(100) NOT NULL,
+    upload_time datetime NOT NULL,
+   	PRIMARY KEY (id)
+);
+
+CREATE TABLE audiobook (
+    id int(4)  NOT NULL UNIQUE,
+    title char(100) NOT NULL,
+    author char(100) NOT NULL,
+    narrator char(100) NOT NULL,
+    duration int(9) UNSIGNED NOT NULL,
+    upload_time datetime NOT NULL,
+   	PRIMARY KEY (id)
+);
+
+#### Request body for song ########
+{
+	audioFileType : 'song',
+	audioFileMetadata : {
+							"id" :  1,
+							"name" : "aaa"	,
+							"duration" : 12,
+						}
+}
+
+#### Request body for podcast ########
+{
+	"audioFileType" : "podcast",
+	"audioFileMetadata" : {
+							"id" : 2,
+							"name" : "bbb"	,
+							"duration" : 1200,
+							"host": "bbb"	
+						}
+}
+
+#### Request body for audiobook ########
+{
+	"audioFileType" : "audiobook",
+	"audioFileMetadata" : {
+							"id" : 1,
+							"title" : "aaa"	,
+							"author" : 1200,
+							"narrator" : "aaa",
+							"duration" : 120 	
+						}
+}
